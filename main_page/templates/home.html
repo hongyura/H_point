@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>H_point home</title>
+    <style>
+        body {background-color: #fff}
+        @font-face {
+        font-family: 'BBTreeGB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+	    #wrap {
+	    width:1000px;
+	    height:800px;
+	    margin: 0 auto;
+	    color: #000;
+	    }
+	    .header {
+	    font-family: 'BBTreeGB';
+	    width:1000px;
+	    height:50px;
+	    line-height: 50px;
+	    background: #EFF5FB;
+	    }
+	    .nav {
+	    font-family: 'BBTreeGB';
+	    width:1000px;
+	    height:50px;
+	    line-height: 50px;
+	    background: #0431B4;
+	    }
+	    .banner {
+	    font-family: 'BBTreeGB';
+	    width:1000px;
+	    height:300px;
+	    line-height: 300px;
+	    background: #FBF8EF;
+	    }
+	    .content {
+	    font-family: 'BBTreeGB';
+	    float: left;
+	    padding:10px;
+	    width: 31%;
+	    line-height: 250px;
+	    }
+	    .footer {
+	    font-family: 'BBTreeGB';
+	    clear: both;
+	    width:1000px;
+	    height:100px;
+	    line-height: 100px;
+	    background: #5858FA;
+	    }
+	    .btn {
+	    font-family: 'BBTreeGB';
+	    float: right;
+	    margin-right: 10px;
+	    }
+	    button{
+	    font-family: 'BBTreeGB';
+	    width:80px;
+	    height:30px;
+	    background-color: #EFF5FB;
+	    color: #0B0B61;
+	    border: none;
+	    cursor: pointer;
+	    }
+	    button:hover {
+	    background-color: #fff;
+	    }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="header">
+        수소 포인트제
+        <div class="btn">
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/login'">로 그 인</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/login'">로그아웃</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/signup'">회원가입</button>
+        </div>
+    </div>
+    <div class="nav">드롭 메뉴</div>
+    <div class="banner">수소차 & 수소포인트 대표 이미지</div>
+    <div class="content">content1 원클릭 연결</div>
+    <div class="content">content2 원클릭 연결</div>
+    <div class="content">content3 원클릭 연결</div>
+    <div class="footer">관리자 이름 및 이메일, 관련 공공기관</div>
+</div>
+</body>
+</html>

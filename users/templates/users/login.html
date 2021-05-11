@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    로그인 페이지
+
+    <br>
+    {% if user.is_authenticated %}
+    로그인 성공!
+    {{ user.username }}님 환영합니다.
+        <a href="{% url 'user:logout' %}">로그아웃</a>
+    {% else %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>아이디</p>
+            <input name="username" type="text">
+            <p>비밀번호</p>
+            <input name="password" type="password">
+            <input type="submit" value="로그인">
+        </form>
+    <a href="{% url 'user:signup' %}">회원가입</a>
+    {% endif %}
+
+</body>
+</html>
