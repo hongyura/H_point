@@ -15,7 +15,7 @@
 	    width:1000px;
 	    height:800px;
 	    margin: 0 auto;
-	    color: #000;
+	    padding: 0;
 	    }
 	    .header {
 	    font-family: 'BBTreeGB';
@@ -26,10 +26,9 @@
 	    }
 	    .nav {
 	    font-family: 'BBTreeGB';
-	    width:1000px;
-	    height:50px;
-	    line-height: 50px;
-	    background: #0431B4;
+        margin: 0 auto;
+	    background: #045FB4;
+	    {text-aglin:center}
 	    }
 	    .banner {
 	    font-family: 'BBTreeGB';
@@ -70,6 +69,49 @@
 	    button:hover {
 	    background-color: #fff;
 	    }
+
+	* {
+		margin: 0;
+	}
+	ul li{
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color:#fff;
+		text-align: center;
+	}
+	#main_menu {
+		font-family: 'BBTreeGB';
+		width: 1000px;
+		height: 50px;
+        line-height: 50px;
+		margin:0 auto;
+		text-align: center;
+	}
+	#main_menu > ul > li {
+		float:left;
+		width:230px;
+		position:relative;
+		margin-left: 0;
+	}
+
+	#main_menu > ul > li > ul {
+		width:230px;
+		display:none;
+		position: absolute;
+		font-size:15px;
+		background: #045FB4;
+	}
+
+	#main_menu > ul > li:hover > ul {
+		display:block;
+		padding: 0;
+	}
+    #main_menu > ul > li > ul > li:hover {
+		background: #000;
+		transition: ease 1s;
+	}
     </style>
 </head>
 <body>
@@ -78,11 +120,48 @@
         수소 포인트제
         <div class="btn">
             <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/login'">로 그 인</button>
-            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/login'">로그아웃</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:8000/H_point_home/'">로그아웃</button>
             <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/signup'">회원가입</button>
         </div>
     </div>
-    <div class="nav">드롭 메뉴</div>
+
+    <div class="nav">
+        <div id="main_menu">
+        <ul>
+            <li>
+              <a herf="">수소포인트제 소개</a>
+              <ul class="sub_menu">
+                <li><a href="">수소포인트제란?</a></li>
+                <li><a href="">참여방법</a></li>
+                <li><a href="">인센티브 지급</a></li>
+              </ul>
+            </li>
+            <li>
+              <a herf="">수소차 소개</a>
+              <ul class="sub_menu">
+                <li><a href="">수소차 개요</a></li>
+                <li><a href="">수소차 충전정보</a></li>
+              </ul>
+            </li>
+            <li>
+              <a herf="">정보마당</a>
+              <ul class="sub_menu">
+                <li><a href="">자료실</a></li>
+                <li><a href="">보도자료</a></li>
+                <li><a href="">관련사이트</a></li>
+              </ul>
+            </li>
+            <li>
+              <a herf="">소통마당</a>
+              <ul class="sub_menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">질문/답변(Q&A)</a></li>
+                <li><a href="">문의전화 안내</a></li>
+              </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
     <div class="banner">수소차 & 수소포인트 대표 이미지</div>
     <div class="content">content1 원클릭 연결</div>
     <div class="content">content2 원클릭 연결</div>
