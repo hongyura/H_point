@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>signup</title>
-</head>
+{% extends "base.html" %}
+
+{% block title %} signup {% endblock %}
+
+{% block content %}
+
 <body>
-    회원가입 페이지
-        <form action="" method="post">
+
+        <form action="{% url 'users:signup' %}" method="POST">
             {% csrf_token %}
+            <p>성</p>
+            <input name="firstname" type="text">
+            <p>이름</p>
+            <input name="lastname" type="text">
             <p>아이디</p>
             <input name="username" type="text">
             <p>비밀번호</p>
@@ -16,13 +20,12 @@
             <input name="email" type="text">
             <p>핸드폰번호</p>
             <input name="phone_number" type="text">
-            <p>성</p>
-            <input name="firstname" type="text">
-            <p>이름</p>
-            <input name="lastname" type="text">
-            <input name="username" type="submit" value="회원가입">
+            <p>주소</p>
+            <input name="address" type="text">
+            <input type="submit" value="회원가입">
         </form>
-
-
+{% endblock %}
 </body>
+{% block footer %}
+{% endblock %}
 </html>

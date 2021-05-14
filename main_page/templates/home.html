@@ -1,172 +1,20 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>H_point home</title>
-    <style>
-        body {background-color: #fff}
-        @font-face {
-        font-family: 'BBTreeGB';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        }
-	    #wrap {
-	    width:1000px;
-	    height:800px;
-	    margin: 0 auto;
-	    padding: 0;
-	    }
-	    .header {
-	    font-family: 'BBTreeGB';
-	    width:1000px;
-	    height:50px;
-	    line-height: 50px;
-	    background: #EFF5FB;
-	    }
-	    .nav {
-	    font-family: 'BBTreeGB';
-        margin: 0 auto;
-	    background: #045FB4;
-	    {text-aglin:center}
-	    }
-	    .banner {
-	    font-family: 'BBTreeGB';
-	    width:1000px;
-	    height:300px;
-	    line-height: 300px;
-	    background: #FBF8EF;
-	    }
-	    .content {
-	    font-family: 'BBTreeGB';
-	    float: left;
-	    padding:10px;
-	    width: 31%;
-	    line-height: 250px;
-	    }
-	    .footer {
-	    font-family: 'BBTreeGB';
-	    clear: both;
-	    width:1000px;
-	    height:100px;
-	    line-height: 100px;
-	    background: #5858FA;
-	    }
-	    .btn {
-	    font-family: 'BBTreeGB';
-	    float: right;
-	    margin-right: 10px;
-	    }
-	    button{
-	    font-family: 'BBTreeGB';
-	    width:80px;
-	    height:30px;
-	    background-color: #EFF5FB;
-	    color: #0B0B61;
-	    border: none;
-	    cursor: pointer;
-	    }
-	    button:hover {
-	    background-color: #fff;
-	    }
+{% extends "base.html" %}
 
-	* {
-		margin: 0;
-	}
-	ul li{
-		list-style: none;
-	}
-	a {
-		text-decoration: none;
-		color:#fff;
-		text-align: center;
-	}
-	#main_menu {
-		font-family: 'BBTreeGB';
-		width: 1000px;
-		height: 50px;
-        line-height: 50px;
-		margin:0 auto;
-		text-align: center;
-	}
-	#main_menu > ul > li {
-		float:left;
-		width:230px;
-		position:relative;
-		margin-left: 0;
-	}
+{% block title %} H_point home {% endblock %}
 
-	#main_menu > ul > li > ul {
-		width:230px;
-		display:none;
-		position: absolute;
-		font-size:15px;
-		background: #045FB4;
-	}
-
-	#main_menu > ul > li:hover > ul {
-		display:block;
-		padding: 0;
-	}
-    #main_menu > ul > li > ul > li:hover {
-		background: #000;
-		transition: ease 1s;
-	}
-    </style>
-</head>
-<body>
-<div id="wrap">
-    <div class="header">
-        수소 포인트제
-        <div class="btn">
-            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/login'">로 그 인</button>
-            <button type="button" onclick="location.href='http://127.0.0.1:8000/H_point_home/'">로그아웃</button>
-            <button type="button" onclick="location.href='http://127.0.0.1:8000/auth/signup'">회원가입</button>
-        </div>
+{% block content %}
+    <div class="banner">
+        수소차 & 수소포인트 대표 이미지
     </div>
+    <div class="content">
+        <a href=""><img src="sample1.jpg" width="33%" height="240" /></a>
 
-    <div class="nav">
-        <div id="main_menu">
-        <ul>
-            <li>
-              <a herf="">수소포인트제 소개</a>
-              <ul class="sub_menu">
-                <li><a href="">수소포인트제란?</a></li>
-                <li><a href="">참여방법</a></li>
-                <li><a href="">인센티브 지급</a></li>
-              </ul>
-            </li>
-            <li>
-              <a herf="">수소차 소개</a>
-              <ul class="sub_menu">
-                <li><a href="">수소차 개요</a></li>
-                <li><a href="">수소차 충전정보</a></li>
-              </ul>
-            </li>
-            <li>
-              <a herf="">정보마당</a>
-              <ul class="sub_menu">
-                <li><a href="">자료실</a></li>
-                <li><a href="">보도자료</a></li>
-                <li><a href="">관련사이트</a></li>
-              </ul>
-            </li>
-            <li>
-              <a herf="">소통마당</a>
-              <ul class="sub_menu">
-                <li><a href="">공지사항</a></li>
-                <li><a href="">질문/답변(Q&A)</a></li>
-                <li><a href="">문의전화 안내</a></li>
-              </ul>
-            </li>
-        </ul>
-        </div>
+        <a href=""><img src="sample2.jpg" width="33%" height="240" /></a>
+
+        <a href=""><img src="sample3.jpg" width="33%" height="240" /></a>
     </div>
-    <div class="banner">수소차 & 수소포인트 대표 이미지</div>
-    <div class="content">content1 원클릭 연결</div>
-    <div class="content">content2 원클릭 연결</div>
-    <div class="content">content3 원클릭 연결</div>
-    <div class="footer">관리자 이름 및 이메일, 관련 공공기관</div>
-</div>
-</body>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
 </html>

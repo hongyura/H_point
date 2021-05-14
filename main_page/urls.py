@@ -5,4 +5,5 @@ app_name = 'main_page'
 
 urlpatterns = [
     path('', main_page.views.home, name='home'),
+    path('inquire/', main_page.views.inquire, name='inquire'),
 ]
