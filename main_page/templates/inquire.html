@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>지자체 문의처</title>
+{% extends "base.html" %}
+
+{% block title %} 지자체 문의처 {% endblock %}
+
+{% block content %}
 	<style>
 h3{
 font-family:"NamunGothic;
@@ -21,7 +21,6 @@ margin-bottom: 10px;
 .table_02_2_1 tbody td:last-child{ border-right:none;}
 .table_02_2_1 tbody th:first-child{border-right:1px solid #e5e5e5;}
 </style>
-</head>
 <body>
 	<!--컨텐츠 영역-->
 	<h3>2021년도 수소연료전지차 지자체 연락처</h3>
@@ -784,5 +783,8 @@ margin-bottom: 10px;
 			</tbody>
 		</table>
 	<!--//컨텐츠 영역-->
+{% endblock %}
 </body>
+{% block footer %}
+{% endblock %}
 </html>
