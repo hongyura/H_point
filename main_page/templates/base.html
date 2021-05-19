@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {background-color: #fff}
+        @font-face {
+        font-family: 'BBTreeGB';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+	    #wrap {
+	    width:1000px;
+	    height:800px;
+	    margin: 0 auto;
+	    padding: 0;
+	    }
+	    .header {
+	    font-family: 'BBTreeGB';
+	    width:1000px;
+	    height:50px;
+	    line-height: 50px;
+	    background: #EFF5FB;
+	    }
+	    .nav {
+	    font-family: 'BBTreeGB';
+        margin: 0 auto;
+	    background: #045FB4;
+
+	    }
+	    .banner {
+	    font-family: 'BBTreeGB';
+	    width:1000px;
+	    height:300px;
+	    line-height: 300px;
+	    background: #FBF8EF;
+	    }
+	    .content {
+	    font-family: 'BBTreeGB';
+	    float: left;
+	    padding:0px;
+	    }
+	    .footer {
+	    font-family: 'BBTreeGB';
+	    font-size: 15px;
+	    clear: both;
+	    width:990px;
+	    height:100px;
+        line-height: 130%;
+	    padding: 10px 5px;
+	    background: #424242;
+	    color: #A4A4A4;
+	    }
+
+	    #footer1 ul li {
+        display:inline;
+        color: #000;
+        border-left:1px solid #999;
+        padding: 0px 5px;
+        }
+        #footer1 ul li:first-child{border-left:none;}
+
+
+	    .btn {
+	    font-family: 'BBTreeGB';
+	    float: right;
+	    margin-right: 10px;
+	    }
+	    button{
+	    font-family: 'BBTreeGB';
+	    width:80px;
+	    height:30px;
+	    background-color: #EFF5FB;
+	    color: #0B0B61;
+	    border: none;
+	    cursor: pointer;
+	    }
+	    button:hover {
+	    background-color: #fff;
+	    }
+
+	* {
+		margin: 0;
+	}
+	ul li{
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color:#fff;
+		text-align: center;
+	}
+	#main_menu {
+		font-family: 'BBTreeGB';
+		width: 1000px;
+		height: 50px;
+        line-height: 50px;
+		margin:0 auto;
+		text-align: center;
+	}
+	#main_menu > ul > li {
+		float:left;
+		width:230px;
+		position:relative;
+		margin-left: 0;
+	}
+
+	#main_menu > ul > li > ul {
+		width:230px;
+		display:none;
+		position: absolute;
+		font-size:15px;
+		background: #045FB4;
+	}
+
+	#main_menu > ul > li:hover > ul {
+		display:block;
+		padding: 0;
+	}
+    #main_menu > ul > li > ul > li:hover {
+		background: #000;
+		transition: ease 1s;
+	}
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+    <div class="header">
+        수소 포인트제
+        {% if user.is_authenticated %}
+
+        <div class="btn">
+            {{ user.username }} 님 환영합니다 (●^◡^●)
+            <button type="button" onclick="location.href='{% url 'users:logout' %}'">로그아웃</button>
+
+        </div>
+        {% else %}
+        <div class="btn">
+            <button type="button" onclick="location.href='{% url 'users:login' %}'">로 그 인</button>
+            <button type="button" onclick="location.href='{% url 'users:signup' %}'">회원가입</button>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="nav">
+        <div id="main_menu">
+        <ul>
+            <li>
+              <a href="">수소포인트제 소개</a>
+              <ul class="sub_menu">
+                <li><a href="">수소포인트제란?</a></li>
+                <li><a href="">참여방법</a></li>
+                <li><a href="">인센티브 지급</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">수소차 소개</a>
+              <ul class="sub_menu">
+                <li><a href="">수소차 개요</a></li>
+                <li><a href="">수소차 충전정보</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">정보마당</a>
+              <ul class="sub_menu">
+                <li><a href="">자료실</a></li>
+                <li><a href="">보도자료</a></li>
+                <li><a href="">관련사이트</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">소통마당</a>
+              <ul class="sub_menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">질문/답변(Q&A)</a></li>
+                <li><a href="{% url 'main_page:inquire' %}">문의전화 안내</a></li>
+              </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+{% block content %}{% endblock %}
+
+</body>
+{% block footer %}{% endblock %}
+
+<div class="footer">
+
+        <div id="footer1">
+        <ul>
+        <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">이메일무단수집거부</a></li>
+        </ul>
+        </div>
+    <strong> 한신대학교 IT경영학과 캡스톤디자인 그린아일랜드</strong><br>
+    TEL : 031-0000-0000 , Email : fkdl55@hs.ac.kr<br>
+    Copyright 2021. 그린아일랜드 All rights reserved.<br>
+    관련 공공기관
+</div>
+
+</div>
+</html>
