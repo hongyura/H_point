@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+{% extends "base.html" %}
+{% block title %} question_detail {% endblock %}
+
+{% block content %}
+
 {% load static %}
 <body>
-
-<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-<div class="container my-3">
-    <h2 class="border-bottom py-2">{{ question.subject }}</h2>
+<h2 class="border-bottom py-2">{{ question.subject }}</h2>
     <div class="card my-3">
         <div class="card-body">
             <div class="card-text" style="white-space: pre-line;">{{ question.content }}</div>
@@ -46,6 +42,14 @@
     </form>
 </div>
 </body>
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
 </html>
 
 
