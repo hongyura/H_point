@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} H_point home {% endblock %}
 
 {% block content %}
     <div class="banner">
-        수소차 & 수소포인트 대표 이미지
+        수소차 연관 단어
     </div>
     <div class="content">
-        <a href=""><img src="sample1.jpg" width="33%" height="240" /></a>
+        <a href=""><img src="{% static 'img/sample1.png' %}" width="33%" height="240" /></a>
 
-        <a href=""><img src="sample2.jpg" width="33%" height="240" /></a>
+        <a href=""><img src="{% static 'img/sample2.jpg' %}" width="33%" height="240" /></a>
 
-        <a href=""><img src="sample3.jpg" width="33%" height="240" /></a>
+        <a href=""><img src="{% static 'img/sample3.jpg' %}" width="33%" height="240" /></a>
     </div>
 {% endblock %}
 

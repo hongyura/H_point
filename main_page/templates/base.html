@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <style>
-        body {background-color: #fff}
+        body {background: #EFFBF2}
         @font-face {
         font-family: 'BBTreeGB';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
@@ -16,7 +16,6 @@
 	    width:1000px;
 	    height:800px;
 	    margin: 0 auto;
-	    padding: 0;
 	    }
 	    .header {
 	    font-family: 'BBTreeGB';
@@ -130,11 +129,11 @@
 <body>
 <div id="wrap">
     <div class="header">
-        수소 포인트제
+        <a href="{% url 'main_page:home' %}"><img src="{% static 'img/logo.png' %}" width="220" height="40"></a>
         {% if user.is_authenticated %}
 
         <div class="btn">
-            {{ user.username }} 님 환영합니다 (●^◡^●)
+            {{ user.username }} 님 환영합니다 ✿^◡^✿
             <button type="button" onclick="location.href='{% url 'users:logout' %}'">로그아웃</button>
 
         </div>
@@ -161,8 +160,8 @@
             <li>
               <a href="">수소차 소개</a>
               <ul class="sub_menu">
-                <li><a href="">수소차 개요</a></li>
-                <li><a href="">수소차 충전정보</a></li>
+                <li><a href="{% url 'main_page:H_car_recap' %}">수소차 개요</a></li>
+                <li><a href="">수소차 충전소</a></li>
               </ul>
             </li>
             <li>
@@ -170,7 +169,7 @@
               <ul class="sub_menu">
                 <li><a href="">자료실</a></li>
                 <li><a href="">보도자료</a></li>
-                <li><a href="">관련사이트</a></li>
+                <li><a href="{% url 'main_page:Related_Sites' %}">관련사이트</a></li>
               </ul>
             </li>
             <li>
@@ -203,6 +202,5 @@
     Copyright 2021. 그린아일랜드 All rights reserved.<br>
     관련 공공기관
 </div>
-
 </div>
 </html>
