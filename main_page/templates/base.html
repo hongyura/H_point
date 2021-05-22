@@ -160,8 +160,13 @@
             <li>
               <a href="">수소차 소개</a>
               <ul class="sub_menu">
+<<<<<<< HEAD
                 <li><a href="{% url 'main_page:H_car_recap' %}">수소차 개요</a></li>
                 <li><a href="">수소차 충전정보</a></li>
+=======
+                <li><a href="">수소차 개요</a></li>
+                <li><a href="{% url 'main_page:H_car_charge' %}">수소차 충전정보</a></li>
+>>>>>>> cdbcfd7e6b324b3bf7929b798ccbbcf81d63e64b
               </ul>
             </li>
             <li>
@@ -176,7 +181,7 @@
               <a href="">소통마당</a>
               <ul class="sub_menu">
                 <li><a href="">공지사항</a></li>
-                <li><a href="">질문/답변(Q&A)</a></li>
+                <li><a href="{% url 'pybo:index' %}">질문/답변(Q&A)</a></li>
                 <li><a href="{% url 'main_page:inquire' %}">문의전화 안내</a></li>
               </ul>
             </li>

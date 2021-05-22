@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+{% extends "base.html" %}
+{% block title %} question_list {% endblock %}
+{% block content %}
 {% load static %}
-<body>
-<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-<div class="container my-3">
-    <table class="table">
+
+
+        <table class="table">
         <thead>
-        <tr class="thead-dark">
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성일시</th>
+         <tr>
+		 <th >번호</th>
+		 <th style="width:50%">제목</th>
+		 <th >작성자</th>
+         <th >작성일시</th>
         </tr>
-        </thead>
+    </thead>
         <tbody>
         {% if question_list %}
         {% for question in question_list %}
-        <tr>
+        <tr class="text-center">
+
             <td>{{ forloop.counter }}</td>
             <td>
                 <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
             </td>
+            <td>{{ question.author.username }}</td>
             <td>{{ question.create_date }}</td>
         </tr>
         {% endfor %}
@@ -33,8 +32,113 @@
         </tr>
         {% endif %}
         </tbody>
-    </table>
-       <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문 등록하기</a>
-</div>
-</body>
+        </table>
+
+        <ui class="pagination">
+        {% if question_list.has_previous %}
+           <a href="?page=1"><div id="btn1">처음으로</div></a>
+           <a href="?page={{ question_list.previous_page_number }}"><div id="btn2">이전</div></a>
+            {% endif %}
+            <span class="current">
+            Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}.
+            </span>
+
+                {% if question_list.has_next %}
+            <a href="?page={{ question_list.next_page_number }}"><div id="btn3">다음</div></a>
+            <a href="?page={{ question_list.paginator.num_pages }}"><div id="btn4">끝으로</div></a>
+            {% endif %}
+    </ui>
+        <a href="{% url 'pybo:question_create' %}"><input type=button value="질문등록"></a>
+
+{% endblock %}
+{% block footer %}
+
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+#btn1 {
+  width: 50px;
+  height: 30px;
+  font-size:12px;
+  font-family: 'Nanum Gothic';
+  color:black;
+  line-height: 30px;
+  text-align: center;
+  background:white;
+  border: solid 1px grey;
+  border-radius:10px;
+}
+
+#btn2 {
+  width: 30px;
+  height: 25px;
+  font-size:12px;
+  font-family: 'Nanum Gothic';
+  color: black;
+  line-height:25px;
+  text-align: center;
+  background: white;
+  border: solid 1px grey;
+  border-radius:10px;
+}
+#btn3 {
+  width: 30px;
+  height: 25px;
+  font-size:12px;
+  font-family: 'Nanum Gothic';
+  color: black;
+  line-height:25px;
+  text-align: center;
+  background: white;
+  border: solid 1px grey;
+  border-radius:10px;
+}
+#btn4 {
+  width: 40px;
+  height: 25px;
+  font-size:12px;
+  font-family: 'Nanum Gothic';
+  color: black;
+  line-height:25px;
+  text-align: center;
+  background: white;
+  border: solid 1px grey;
+  border-radius:10px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing:px;
+    border: none;
+
+}
+
+table th {
+    padding:15px;
+    background-color: #ffffff;
+     border: none;
+    border: 0.5px solid #bcbcbc;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+table td {
+    padding: 15px;
+    background-color: #b0c4de;
+     border: none;
+     border: 0px solid #6495ed;
+     text-align: left;
+
+}
+
+
+
+</style>
+{% endblock %}
+
 </html>
