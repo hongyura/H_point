@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 관련 사이트 {% endblock %}
+
+{% block content %}
+ &nbsp;<h3	align=center>해당 사이트를 클릭하면 새창에서 바로가기로 연결됩니다.</h3>&nbsp;&nbsp;
+<STYLE TYPE="text/css">
+	table {
+	font-size: 14pt;
+	text-align: center;
+	}
+</STYLE>
+
+    <table border=2 bordercolor=#08298A width =100% height=20% >
+    	<tr> <!-- 첫번째 행 시작 -->
+	        <td title="경기도청 바로가기" width =50% onClick="window.open('http://www.gg.go.kr/');">
+				<img src="{% static 'img/gg.png' %}" width="150" height="105">
+				<br><b>경기도청</b>
+			</td>
+
+	        <td title="환경부 바로가기" width =50% onClick="window.open('http://www.me.go.kr/');">
+				<img src="{% static 'img/me.png' %}" width="100" height="105">
+				<br><b>환경부</b>
+			</td>
+	    </tr>
+
+	    <tr> <!-- 두번째 행 시작 -->
+	        <td title="산업통상자원부 바로가기" onClick="window.open('http://www.motie.go.kr/');">
+				<img src="{% static 'img/motie.jpg' %}" width="175" height="105">
+				<br><b>산업통상자원부</b>
+			</td>
+
+	        <td title="국토교통부 바로가기" onClick="window.open('http://www.molit.go.kr/');">
+				<img src="{% static 'img/molit.jpg' %}" width="180" height="105">
+				<br><b>국토교통부</b>
+			</td>
+	    </tr>
+
+    	<tr> <!-- 세번째 행 시작 -->
+	        <td title="한국환경공단 바로가기" onClick="window.open('http://www.keco.or.kr/');">
+				<img src="{% static 'img/keco.png' %}" width="130" height="105">
+				<br><b>한국환경공단</b>
+			</td>
+
+	        <td title="한국자동차환경협회 바로가기" onClick="window.open('http://www.aea.or.kr/');">
+				<img src="{% static 'img/aea.jpg' %}" width="120" height="105">
+				<br><b>한국자동차환경협회</b>
+			</td>
+	    </tr>
+
+	    <tr> <!-- 네번째 행 시작 -->
+	        <td title="기후정보포털 바로가기" onClick="window.open('http://www.climate.go.kr/');">
+				<img src="{% static 'img/climate.png' %}" width="200" height="70">
+				<br><b>기후정보포털</b>
+			</td>
+
+	        <td title="경기도경제과학진흥원 바로가기" onClick="window.open('http://www.gbsa.or.kr/');">
+				<img src="{% static 'img/gbsa.png' %}" width="200" height="100">
+				<br><b>경기도경제과학진흥원</b>
+			</td>
+	    </tr>
+
+    	<tr> <!-- 다섯번째 행 시작 -->
+	        <td title="한국판 뉴딜 바로가기" onClick="window.open('http://www.knewdeal.go.kr/');">
+				<img src="{% static 'img/knewdeal.png' %}" width="200" height="70">
+				<br><b>한국판 뉴딜</b>
+			</td>
+
+	        <td title="한신대학교 바로가기" onClick="window.open('http://www.hs.ac.kr/');">
+				<img src="{% static 'img/hs.jpg' %}" width="180" height="105">
+				<br><b>한신대학교</b>
+			</td>
+	    </tr>
+    </table> &nbsp;
+
+{% endblock %}
+
+</body>
+{% block footer %}
+{% endblock %}
+</html>
