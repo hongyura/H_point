@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %} notice_detail {% endblock %}
+{% block content %}
+{% load static %}
+<style type="text/css">
+        .content {
+            max-width:800px;
+            margin: auto;
+            padding:30px;
+        }
+
+		.reply_content {
+			text-align:right
+		}
+
+		.reply_content .reply{
+			border-radius: 0.5em;
+			display: block;
+			margin: 4px;
+			padding: 3px 10px;
+		}
+
+		.board_for_read {
+			width: 200%;
+			border-width: 1px;
+			background-color:#f1f1f1;
+		}
+
+		#title {
+			height: 30px;
+			width: 200%;
+			border-radius: 0.5em;
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+			background: none;
+		}
+
+        textarea {
+			width: 200%;
+            font-family: inherit;
+            font-size: 250%
+			resize: none;
+			border-radius: 0.5em;
+			padding-block: 10px;
+			border: 0px;
+			background: none;
+        }
+
+		.td_title {
+			background-color: #d8d8d8
+		}
+</style>
+<div class="content">
+         <table class="board_for_read">
+	    <tbody>
+	     <tr>
+	      <td class="td_title" style="text-align:center; width:20%;">제목</td>
+	      <td style="padding:10px;">
+	      <input type="text" name="title" id="title" value="{{ notice.title }}" readonly/></td>
+	  </tr>
+	   <tr>
+	         <td class="td_title" style="text-align:center; width:30%;">작성일자</td>
+	         <td style="padding:10px;">
+        	<span>{{ notice.registered_date|date:'Y.m.d. H:i' }}</span></td>
+		     <div>
+		         <span>작성자 : {{ notice.writer }}</span>
+		         <span>조회수 : {{ notice.hits }}</span>
+             </div>
+	     </tr>
+	  <tr>
+	       <td class="td_title" style="text-align:center;">내용</td>
+	       <td style="padding:10px;">
+	      <textarea name="detail" id="detail" rows="30" readonly>{{ notice.content }}</textarea></td>
+	</tr>
+</tbody>
+</table>
+
+
+              <div style = "text-align:right;">
+		<a href="{% url 'notice:index' %}"><input type=button value="목록"></a>
+       </div>
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} answer_form{% endblock %}
+{% block content %}
+{% load static %}
 
 
 <div class="container my-3">
@@ -15,11 +12,14 @@
 
             <label for="content">답변내용</label>
             <textarea class="form-control" name="content" id="content"
-                      rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
+                      rows="30">{{ form.content.value|default_if_none:'' }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">등록</button>
 
     </form>
 </div>
-</body>
-</html>
+
+{% endblock %}
+
+
+

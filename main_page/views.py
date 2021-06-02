@@ -23,3 +23,11 @@ def participate(request):
     return render(request, "participate.html")
 
 
+def prediction(request):
+    return render(request, "prediction.html")
+
+def material(request):
+    return render(request, "material.html")
+
+def press_release(request):
+    return render(request, "press_release.html")

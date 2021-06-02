@@ -2,6 +2,7 @@
 <html lang="ko">
 {% load static %}
 <head>
+
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <style>
@@ -130,6 +131,8 @@
 		transition: ease 1s;
 	}
     </style>
+
+
 </head>
 
 <body>
@@ -166,20 +169,21 @@
               <ul class="sub_menu">
                 <li><a href="{% url 'main_page:H_car_recap' %}">수소차 개요</a></li>
                 <li><a href="{% url 'main_page:H_car_charge' %}">수소차 충전정보</a></li>
+                  <li><a href="{% url 'main_page:prediction' %}">예상 융복합 수소충전소</a></li>
               </ul>
             </li>
             <li>
               <a href="">정보마당</a>
               <ul class="sub_menu">
-                <li><a href="">자료실</a></li>
-                <li><a href="">보도자료</a></li>
+                <li><a href="{% url 'main_page:material' %}">자료실</a></li>
+                <li><a href="{% url 'main_page:press_release' %}">보도자료</a></li>
                 <li><a href="{% url 'main_page:Related_Sites' %}">관련사이트</a></li>
               </ul>
             </li>
             <li>
               <a href="">소통마당</a>
               <ul class="sub_menu">
-                <li><a href="">공지사항</a></li>
+                <li><a href="{% url 'notice:index' %}">공지사항</a></li>
                 <li><a href="{% url 'pybo:index' %}">질문/답변(Q&A)</a></li>
                 <li><a href="{% url 'main_page:inquire' %}">문의전화 안내</a></li>
               </ul>

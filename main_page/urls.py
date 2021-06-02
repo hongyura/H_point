@@ -12,5 +12,12 @@ urlpatterns = [
     path('H_car_charge/', main_page.views.H_car_charge, name='H_car_charge'),
     path('what_H_point/', main_page.views.what_H_point, name='what_H_point'),
     path('participate/', main_page.views.participate, name='participate'),
+    path('prediction/', main_page.views.prediction, name='prediction'),
+    path('material/', main_page.views.material, name='material'),
+    path('press_release/', main_page.views.press_release, name='press_release'),
+
 ]
+
+
+
 
