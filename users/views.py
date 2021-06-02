@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.http import HttpResponse
+
 
 from .models import User
 

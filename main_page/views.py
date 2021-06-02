@@ -16,4 +16,10 @@ def Related_Sites(request):
 def H_car_charge(request):
     return render(request, "H_car_charge.html")
 
+def what_H_point(request):
+    return render(request, "what_H_point.html")
+
+def participate(request):
+    return render(request, "participate.html")
+
 

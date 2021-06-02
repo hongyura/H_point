@@ -5,19 +5,36 @@
 
 {% block content %}
     <div class="banner">
-        수소차 연관 단어
-
-
-
-
-
+        <img src="{% static 'img/car_w.png' %}" width="510" height="300"/>
     </div>
+
+
+   <div class="point">
+       <p style="font-size:20px; text-align:center; color: #0B0B3B;">
+        {% if user.is_authenticated %}
+        {% csrf_token %}
+           <br>
+           <img src="{% static 'img/character.png' %}" width="220" height="150"/><br><br>
+            {{ user.username }} 님의 현재 포인트는 {{ user.point }} 점 입니다 ❤<br><br>
+            {{ user.username }} 님은 현재 {{ user.ranking }} 회원 입니다 ❤
+       </p>
+        {% else %}
+           <p style="font-size:20px; text-align:center; margin-top:100px; color: #0B0B3B;">
+            로그인 하시면 현재 포인트를<br><br>확인 할 수 있습니다 (◍•ᴗ•◍)❤
+        {% endif %}
+           </p>
+    </div>
+
     <div class="content">
-        <a href=""><img src="{% static 'img/sample1.png' %}" width="33%" height="240" /></a>
+        <a href="{% url 'main_page:what_H_point' %}"><img src="{% static 'img/sample0.png' %}" width="19.6%" height="240" /></a>
 
-        <a href=""><img src="{% static 'img/sample2.jpg' %}" width="33%" height="240" /></a>
+        <a href="{% url 'main_page:H_car_charge' %}"><img src="{% static 'img/sample2.png' %}" width="19.6%" height="240" /></a>
 
-        <a href=""><img src="{% static 'img/sample3.jpg' %}" width="33%" height="240" /></a>
+        <a href="{% url 'pybo:index' %}"><img src="{% static 'img/sample3.png' %}" width="19.7%" height="240" /></a>
+
+        <a href="{% url 'main_page:inquire' %}"><img src="{% static 'img/sample4.png' %}" width="19.7%" height="240" /></a>
+
+        <a href=""><img src="{% static 'img/sample5.png' %}" width="19.7%" height="240" /></a>
     </div>
 {% endblock %}
 
