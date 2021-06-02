@@ -17,3 +17,11 @@ def H_car_charge(request):
     return render(request, "H_car_charge.html")
 
 
+def prediction(request):
+    return render(request, "prediction.html")
+
+def material(request):
+    return render(request, "material.html")
+
+def press_release(request):
+    return render(request, "press_release.html")

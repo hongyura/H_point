@@ -23,4 +23,5 @@ urlpatterns = [
     path('H_point_home/', include('main_page.urls')),
     path('auth/', include('users.urls')),
     path('pybo/', include('pybo.urls')),
+    path('notice/', include('notice.urls')),
 ]

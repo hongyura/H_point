@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% block title %} 보도자료 {% endblock %}
+{% load static %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+		integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg
+		=="crossorigin="anonymous"></script>
+<style>
+form {
+	width: 500px;
+	font-size: 14pt;
+}
+table {
+	border-collapse:collapse;
+	text-align:center;
+	margin-bottom: 20px;
+}
+th, td {
+	padding: 5px 30px;
+}
+.off-screen {
+	display: none;
+}
+#nav {
+	width: 500px;
+	text-align: center;
+}
+#nav a {
+	display: inline-block;
+	padding: 3px 5px;
+	margin-right: 10px;
+	font-family:Tahoma;
+	background: #ccc;
+	color: #000;
+	text-decoration: none;
+}
+#nav a.active {
+	background: #333;
+	color: #fff;
+}
+caption{
+    font-size: 30px;
+    font-style: normal;
+}
+
+
+</style>
+
+
+
+
+<div style ="padding-left: 30px;">
+  <table id="보도자료" border="2"><br>
+	  <caption >보도・설명 자료실
+		<form action="" id="setRows">
+			<p>
+				showing
+				<input type="text" name="rowPerPage" value="6">
+			 per page
+			</p><br>
+		</form>
+
+	  </caption>
+
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>제목</th>
+			<th>출처</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>전기차,수소차 시대가 온다.</td>
+			<td><input type="button" value="상세보기" onClick="window.open('http://www.me.go.kr/home/web/board/read.do?menuId=10457&boardMasterId=744&boardCategoryId=&boardId=1387850')"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>국내 최초 배관 연결 수소충전소 구축…도시가스처럼 끊임없이 공급한다.</td>
+			<td><input type="button" value="상세보기" onClick="window.open(' http://www.me.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=title&searchValue=%EC%88%98%EC%86%8C&menuId=286&orgCd=&boardId=1421520&boardMasterId=1&boardCategoryId=39&decorator=')"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>수소충전소 운영자에 단비, 환경부가 수소연료구입비를 지원하여 힘 보탠다.</td>
+			<td> <input type="button" value="상세보기" onClick="window.open('http://www.me.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=title&searchValue=%EC%88%98%EC%86%8C&menuId=286&orgCd=&boardId=1415510&boardMasterId=1&boardCategoryId=39&decorator=')"></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>정부청사 내 첫 수소충전소 준</td>
+			<td>  <input type="button" value="상세보기" onClick="window.open(' http://www.me.go.kr/home/web/board/read.do?pagerOffset=0&maxPageItems=10&maxIndexPages=10&searchKey=title&searchValue=%EC%88%98%EC%86%8C%EC%B6%A9%EC%A0%84%EC%86%8C&menuId=286&orgCd=&boardId=1393860&boardMasterId=1&boardCategoryId=39&decorator=')"></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>미래를 선도할 친환경 전기·수소차와 자율주행차 분야 2021년도 R&D 본격 지원 시작!</td>
+			<td><input type="button" value="상세보기" onClick="window.open('http://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_seq_n=163742&bbs_cd_n=81&currentPage=1&search_key_n=title_v&cate_n=&dept_v=&search_val_v=%EC%88%98%EC%86%8C%EC%B0%A8')"></td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>공공부문 보유차량 100대 중 8대는 전기‧수소차?!</td>
+			<td> <input type="button" value="상세보기" onClick="window.open(' http://www.motie.go.kr/motie/ne/motienewse/Motienews/bbs/bbsView.do?bbs_seq_n=155117749&bbs_cd_n=2&currentPage=1&search_key_n=title_v&cate_n=&dept_v=&search_val_v=%EC%88%98%EC%86%8C%EC%B0%A8')"></td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>올해 전기차‧수소차 보조금 어떻게 달라질까?</td>
+			<td> <input type="button" value="상세보기" onClick="window.open(' http://www.motie.go.kr/motie/ne/motienewse/Motienews/bbs/bbsView.do?bbs_seq_n=155117604&bbs_cd_n=2&currentPage=1&search_key_n=title_v&cate_n=&dept_v=&search_val_v=%EC%88%98%EC%86%8C%EC%B0%A8')"></td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>“2025년까지 전기‧수소차 가격 1천만원 이상 인하” </td>
+			<td> <input type="button" value="상세보기" onClick="window.open(' http://www.motie.go.kr/motie/ne/motienewse/Motienews/bbs/bbsView.do?bbs_seq_n=155117640&bbs_cd_n=2&currentPage=1&search_key_n=title_v&cate_n=&dept_v=&search_val_v=%EC%88%98%EC%86%8C%EC%B0%A8')"></td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>산단공·중견연·생기연 등 6개 민간 협단체와 사업재편 파트너십 MOU 체결</td>
+			<td><input type="button" value="상세보기" onClick="window.open('http://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_cd_n=81&bbs_seq_n=164092')"></td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>국민 생활 밀착형 규제 해소로 그린·디지털 경제 앞당긴다.</td>
+			<td> <input type="button" value="상세보기" onClick="window.open(' http://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_cd_n=81&bbs_seq_n=163894')"></td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>친환경차의 충전・주차・사용 제도개선 본격 추진!</td>
+			<td><input type="button" value="상세보기" onClick="window.open('  http://www.motie.go.kr/motie/ne/presse/press2/bbs/bbsView.do?bbs_cd_n=81&bbs_seq_n=163842')"></td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>일본제조사 혼다,2040년엔 전기.수소차만 생산한다.</td>
+			<td><input type="button" value="상세보기" onClick="window.open(' https://www.h2news.kr/news/article.html?no=8988')"></td>
+		</tr>
+	</tbody>
+
+</table>
+
+
+<script>
+var $setRows = $('#setRows');
+
+$setRows.submit(function (e) {
+	e.preventDefault();
+	var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+//		console.log(typeof rowPerPage);
+
+	var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
+	if (!rowPerPage) {
+		alert(zeroWarning);
+		return;
+	}
+	$('#nav').remove();
+	var $보도자료 = $('#보도자료');
+
+	$보도자료.after('<div id="nav"></div>');
+
+
+	var $tr = $($보도자료).find('tbody tr');
+	var rowTotals = $tr.length;
+//	console.log(rowTotals);
+
+	var pageTotal = Math.ceil(rowTotals/ rowPerPage);
+	var i = 0;
+
+	for (; i < pageTotal; i++) {
+		$('<a href="#"></a>')
+				.attr('rel', i)
+				.html(i + 1)
+				.appendTo('#nav');
+	}
+
+	$tr.addClass('off-screen')
+			.slice(0, rowPerPage)
+			.removeClass('off-screen');
+
+	var $pagingLink = $('#nav a');
+	$pagingLink.on('click', function (evt) {
+		evt.preventDefault();
+		var $this = $(this);
+		if ($this.hasClass('active')) {
+			return;
+		}
+		$pagingLink.removeClass('active');
+		$this.addClass('active');
+
+		// 0 => 0(0*4), 4(0*4+4)
+		// 1 => 4(1*4), 8(1*4+4)
+		// 2 => 8(2*4), 12(2*4+4)
+		// 시작 행 = 페이지 번호 * 페이지당 행수
+		// 끝 행 = 시작 행 + 페이지당 행수
+
+		var currPage = $this.attr('rel');
+		var startItem = currPage * rowPerPage;
+		var endItem = startItem + rowPerPage;
+
+		$tr.css('opacity', '0.0')
+				.addClass('off-screen')
+				.slice(startItem, endItem)
+				.removeClass('off-screen')
+				.animate({opacity: 1}, 300);
+
+	});
+$pagingLink.filter(':first').addClass('active');
+
+});
+
+$setRows.submit();
+
+</script><br>
+</div>
+{% endblock %}
+
+
+</body>
+{% block footer %}
+{% endblock %}
+</html>
+

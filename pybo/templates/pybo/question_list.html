@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 
-
+  <h1>Q&A</h1>
         <table class="table">
         <thead>
          <tr>
@@ -22,7 +22,7 @@
             <td>
                 <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
             </td>
-            <td>{{ question.author.username }}</td>
+            <td>{{ question.writer.username }}</td>
             <td>{{ question.create_date }}</td>
         </tr>
         {% endfor %}
@@ -54,8 +54,6 @@
 {% block footer %}
 
 <style>
-@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
 #btn1 {
   width: 50px;
   height: 30px;
@@ -106,14 +104,12 @@
   border-radius:10px;
 }
 
-
-
 table {
     width: 100%;
     border-collapse: separate;
     border-spacing:px;
     border: none;
-
+    margin: 0 auto;
 }
 
 table th {
@@ -141,4 +137,3 @@ table td {
 </style>
 {% endblock %}
 
-</html>

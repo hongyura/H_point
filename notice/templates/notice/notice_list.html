@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %} notice_list {% endblock %}
+{% block content %}
+{% load static %}
+
+
+
+<style>
+   table.table-style-one {
+       font-family: verdana,arial,sans-serif;
+        width: 100%;
+        font-size:15px;
+        color:#333333;
+        border-width:0.5px;
+        border-color: #3A3A3A;
+        border-collapse: collapse;
+
+        }
+    table.table-style-one th {
+        border-width: 0.5px;
+        padding: 12px;
+        border-style: solid;
+        border-color: #3A3A3A;
+        background-color: #ffffff;
+    }
+    table.table-style-one td {
+        border-width: 0.5px;
+        padding: 12px;
+        border-style: solid;
+        border-color:  #3A3A3A;
+        background-color: #B3B3B3;
+
+    }
+  .abutton {
+            background-color: #e8efff;
+            color: #333333;
+            font-size: 14px;
+        }
+
+</style>
+
+<br><h1  align=center>공지사항</h1><br>
+
+            <table class="table-style-one" >
+              <thead>
+                 <tr>
+                    <th> 번호 </th>
+                     <th> 제목 </th>
+                    <th> 작성자 </th>
+                    <th> 등록일 </th>
+                    <th> 조회수 </th>
+                </tr>
+              </thead>
+            <tbody>
+                 {% if notice_list %}
+                 {% for notice in notice_list %}
+                 <tr class="{% if forloop.counter|divisibleby:2 %}even_bgcolor{% endif %}">
+                      <td>{{ notice.id }}</td>
+                      <td><a href="{% url 'notice:detail' notice.id %}">
+                          {{ notice.title}}</a></td>
+                      <td>{{ notice.writer }}</td>
+                      <td>{{ notice.registered_date|date:'Y. m. d' }}</td>
+                      <td>{{ notice.hits }}</td>
+               </tr>
+                 {% endfor %}
+             {% else %}
+             <tr>
+                 <td> 작성된 게시글이 없습니다.</td>
+              </tr>
+             {% endif %}
+        </tbody>
+    </table>
+
+<div style="text-align:center">
+            <div class="pagination">
+
+                <div style="width:30%; margin: 5px;" >
+                 {% if notice_list.has_previous %}
+                    <a class="abutton" href="?page=1">맨 앞으로</a>
+                    <a class="abutton" href="?page={{ notice_list.previous_page_number }}">이전</a>
+                {% endif %}
+                </div>
+
+                <div style="width:80%; margin: 5px;">
+                {% for page in notice_list.paginator.page_range %}
+                    {% if page >= notice_list.number|add:-2 and page <= notice_list.number|add:2 %}
+                    <span class="{% if page == notice_list.number %}current{% endif %}">
+                        <a href="?page={{ page }}">{{ page}}</a>
+                    </span>
+                    {% elif page >= notice_list.number|add:-3 and page <= notice_list.number|add:3 %}
+                        ..
+                    {% endif %}
+                {% endfor %}
+                </div>
+
+                <div style="text-align:center;">
+                {% if notice_list.has_next %}
+                    <a class="abutton" href="?page={{ notice_list.next_page_number }}">다음</a>
+                    <a class="abutton" href="?page={{ notice_list.paginator.num_pages }}">맨 뒤로</a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+{% endblock %}
+
+</body>
+{% block footer %}
+{% endblock %}
+</html>

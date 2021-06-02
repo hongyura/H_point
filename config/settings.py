@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'main_page',
     'pybo',
+    'notice',
 ]
 
 MIDDLEWARE = [
