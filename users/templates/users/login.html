@@ -1,21 +1,69 @@
 {% extends "base.html" %}
 
 {% block title %} login {% endblock %}
-
 {% block content %}
+{% load static %}
+<style>
 
-<body>
+filter: progid:dximagetransform.microsoft.gradient
+(startColorstr=#6eb6de,endColorstr=#4a77d4, GradientType=0);
+border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+
+
+
+.login {
+  margin: -100px 0
+  width:150px;
+  height:150px;
+}
+
+.login h1 { color: #092756; text-shadow: 0 0 10px rgba(0,0,0,0.3);
+letter-spacing:1px;
+line-height:2;}
+
+
+input {
+center;
+  width: 20%;
+  margin-bottom: 10px;
+
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+
+}
+
+
+
+</style>
+
+<div class="login">
+
+
         <form action="{% url 'users:login' %}" method="post">
             {% csrf_token %}
-            <p>아이디</p>
+           <h1>Login</h1>
+            <p style="line-height:3;">아이디</p>
             <input name="username" type="text">
-            <p>비밀번호</p>
+            <p style="line-height:3;">비밀번호</p>
             <input name="password" type="password">
-            <input type="submit" value="로그인">
+            <button  type="submit" >로그인</button>
+            <button type="button" onclick="location.href='{% url 'users:signup' %}'">회원가입</button>
         </form>
-    <a href="{% url 'users:signup' %}">회원가입</a>
+    </div>
+
+
+
+
 {% endblock %}
 </body>
+
 {% block footer %}
 {% endblock %}
-</html>

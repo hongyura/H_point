@@ -15,7 +15,7 @@ urlpatterns = [
     path('prediction/', main_page.views.prediction, name='prediction'),
     path('material/', main_page.views.material, name='material'),
     path('press_release/', main_page.views.press_release, name='press_release'),
-
+    path('point_payment/', main_page.views.point_payment, name='point_payment'),
 ]
 
 

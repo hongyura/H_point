@@ -1,15 +1,56 @@
 {% extends "base.html" %}
-
 {% block title %} signup {% endblock %}
-
 {% block content %}
+{% load static %}
+<style>
 
-<body>
 
-        <form action="{% url 'users:signup' %}" method="POST">
+
+filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de,
+endColorstr=#4a77d4, GradientType=0);
+border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+
+
+.signup{
+  margin: -50px 0
+  width:150px;
+  height:150px;
+}
+
+.signup h1 { color: #092756; text-shadow: 0 0 10px rgba(0,0,0,0.3);
+letter-spacing:1px;
+ line-height:2;
+ }
+
+
+input {
+center;
+  width: 30%;
+  margin-bottom: 10px;
+
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+
+
+
+</style>
+
+<div class="signup">
+
+
+<form action="{% url 'users:signup' %}" method="POST">
             {% csrf_token %}
+        <h1>signup</h1>
             <p>성</p>
-            <input name="firstname" type="text">
+             <input name="firstname" type="text">
             <p>이름</p>
             <input name="lastname" type="text">
             <p>아이디</p>
@@ -22,10 +63,14 @@
             <input name="phone_number" type="text">
             <p>주소</p>
             <input name="address" type="text">
-            <input type="submit" value="회원가입">
+           <button type="submit">회원가입</button>
         </form>
+
+</div>
+
+
+
 {% endblock %}
-</body>
 {% block footer %}
+</body>
 {% endblock %}
-</html>

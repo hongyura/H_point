@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# Create your views here.
+
 
 def home(request):
     return render(request, 'home.html')
@@ -31,3 +31,7 @@ def material(request):
 
 def press_release(request):
     return render(request, "press_release.html")
+
+
+def point_payment(request):
+    return render(request, "point_payment.html")

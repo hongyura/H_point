@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-{% load static %}
+
 <head>
+    {% load static %}
+
 
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <style>
-        body {background: #fff}
+    body {background: #fff}
         @font-face {
         font-family: 'BBTreeGB';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
@@ -29,7 +31,6 @@
 	    font-family: 'BBTreeGB';
         margin: 0 auto;
 	    background: #045FB4;
-
 	    }
 	    .banner {
 	    font-family: 'BBTreeGB';
@@ -84,21 +85,25 @@
 	    border: none;
 	    cursor: pointer;
 	    }
-	    button:hover {
+
+      button:hover {
 	    background-color: #fff;
-	    }
+	   }
+
 
 	* {
 		margin: 0;
 	}
+   a {
+		text-decoration: none;
+		color:#fff;
+         text-align: center;
+      }
+
 	ul li{
 		list-style: none;
 	}
-	a {
-		text-decoration: none;
-		color:#fff;
-		text-align: center;
-	}
+
 	#main_menu {
 		font-family: 'BBTreeGB';
 		width: 1000px;
@@ -130,12 +135,17 @@
 		background: #000;
 		transition: ease 1s;
 	}
-    </style>
 
 
+
+</style>
 </head>
 
+
+
 <body>
+
+
 <div id="wrap">
     <div class="header">
         <a href="{% url 'main_page:home' %}"><img src="{% static 'img/logo.png' %}" width="220" height="40"></a>
@@ -153,15 +163,15 @@
         {% endif %}
     </div>
 
-    <div class="nav">
+   <div class="nav">
         <div id="main_menu">
         <ul>
             <li>
-              <a href="">수소포인트제 소개</a>
-              <ul class="sub_menu">
+              <a  href="">수소포인트제 소개</a>
+              <ul >
                 <li><a href="{% url 'main_page:what_H_point' %}">수소포인트제란?</a></li>
                 <li><a href="{% url 'main_page:participate' %}">참여방법</a></li>
-                <li><a href="">인센티브 지급</a></li>
+                <li><a  href="{% url 'main_page:point_payment'%}">인센티브 지급</a></li>
               </ul>
             </li>
             <li>

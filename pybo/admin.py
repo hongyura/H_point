@@ -5,11 +5,22 @@ from .models import Question, Answer
 class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['subject']         # admin에서 제목으로 질문을 검색할 수 있도록 검색항목을 추가함
 
+    list_display = (
+        'subject',
+        'writer',
 
+
+        )
 admin.site.register(Question, QuestionAdmin)
 
 
 class AnswerAdmin(admin.ModelAdmin):
     search_fields = ['subject']
 
+    list_display = (
+
+        'content',
+        'create_date',
+
+        )
 admin.site.register(Answer, AnswerAdmin)

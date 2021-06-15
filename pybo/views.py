@@ -42,6 +42,7 @@ def answer_create(request, question_id):
     if not request.user.is_superuser:   # 관리자green으로 로그인시 답변기능 활성화, 일반유저는 불가
           messages.error(request, '권한이 없습니다')
           return redirect('pybo:detail', question_id=question.id)
+
     # 리퀘스트 받은 from의 메소드가 POST라면
     if request.method == "POST":
        form = AnswerForm(request.POST)
@@ -56,4 +57,4 @@ def answer_create(request, question_id):
     else:
         form = AnswerForm()
         context = {'question': question, 'form': form}
-    return render(request, 'pybo/detail.html', context)
+    return render(request, 'pybo/question_detail.html', context)

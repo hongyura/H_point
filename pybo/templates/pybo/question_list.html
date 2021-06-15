@@ -1,59 +1,11 @@
 {% extends "base.html" %}
 {% block title %} question_list {% endblock %}
+
 {% block content %}
+
 {% load static %}
 
-  <h1>Q&A</h1>
-        <table class="table">
-        <thead>
-         <tr>
-		 <th >번호</th>
-		 <th style="width:50%">제목</th>
-		 <th >작성자</th>
-         <th >작성일시</th>
-        </tr>
-    </thead>
-        <tbody>
-        {% if question_list %}
-        {% for question in question_list %}
-        <tr class="text-center">
-
-            <td>{{ forloop.counter }}</td>
-            <td>
-                <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
-            </td>
-            <td>{{ question.writer.username }}</td>
-            <td>{{ question.create_date }}</td>
-        </tr>
-        {% endfor %}
-        {% else %}
-        <tr>
-            <td colspan="3">질문이 없습니다.</td>
-        </tr>
-        {% endif %}
-        </tbody>
-        </table>
-
-        <ui class="pagination">
-        {% if question_list.has_previous %}
-           <a href="?page=1"><div id="btn1">처음으로</div></a>
-           <a href="?page={{ question_list.previous_page_number }}"><div id="btn2">이전</div></a>
-            {% endif %}
-            <span class="current">
-            Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}.
-            </span>
-
-                {% if question_list.has_next %}
-            <a href="?page={{ question_list.next_page_number }}"><div id="btn3">다음</div></a>
-            <a href="?page={{ question_list.paginator.num_pages }}"><div id="btn4">끝으로</div></a>
-            {% endif %}
-    </ui>
-        <a href="{% url 'pybo:question_create' %}"><input type=button value="질문등록"></a>
-
-{% endblock %}
-{% block footer %}
-
-<style>
+<style >
 #btn1 {
   width: 50px;
   height: 30px;
@@ -103,6 +55,18 @@
   border: solid 1px grey;
   border-radius:10px;
 }
+#btn5 {
+  width: 70px;
+  height:35px;
+  font-size:15px;
+  font-family: 'Nanum Gothic';
+  color: black;
+  line-height:25px;
+  text-align: center;
+  background: pink;
+  border: solid 1px grey;
+  border-radius:10px;
+}
 
 table {
     width: 100%;
@@ -133,7 +97,61 @@ table td {
 }
 
 
-
 </style>
+
+
+ <h1>Q&A</h1>
+
+
+        <table class="table">
+        <thead>
+         <tr class="thead-dark">
+		 <th >번호</th>
+		 <th style="width:50%">제목</th>
+		 <th >작성자</th>
+         <th >작성일시</th>
+        </tr>
+    </thead>
+        <tbody>
+        {% if question_list %}
+        {% for question in question_list %}
+        <tr class="text-center">
+
+            <td>{{ forloop.counter }}</td>
+            <td>
+            <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
+            </td>
+            <td>{{ question.writer.username }}</td>
+            <td>{{ question.create_date|date:'Y. m. d'}}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">질문이 없습니다.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+        </table>
+
+        <ui class="pagination">
+        {% if question_list.has_previous %}
+           <a href="?page=1"><div id="btn1">처음으로</div></a>
+           <a href="?page={{ question_list.previous_page_number }}"><div id="btn2">이전</div></a>
+            {% endif %}
+            <span class="current">
+            Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}.
+            </span>
+
+                {% if question_list.has_next %}
+            <a href="?page={{ question_list.next_page_number }}"><div id="btn3">다음</div></a>
+            <a href="?page={{ question_list.paginator.num_pages }}"><div id="btn4">끝으로</div></a><br>
+            {% endif %}
+    </ui>
+        <a href="{% url 'pybo:question_create' %}"><input id="btn5" type="submit" value="질문등록"></a>
+
+
+{% endblock %}
+{% block footer %}
+</body>
 {% endblock %}
 
